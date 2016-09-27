@@ -1,0 +1,435 @@
+﻿<UserControl x:Class="FMS_GUI.Main_Operation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FMS_GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000" Background="White">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="Info" Content="Please choose an action to perfom on the disk" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="28" FontStyle="Italic" Background="DarkBlue" Foreground="White"/>
+            <!-- *********************** File option, + Button + Label, fully implemented **************************-->
+            <Grid Grid.Row="1" x:Name="FileMenu" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="Add" Content="Add" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="1" FontSize="17"/>
+                <Label x:Name="Update" Content="Update" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="17"/>
+                <Label x:Name="Delete" Content="Delete" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="1" FontSize="17"/>
+                <Label x:Name="Information" Content="About" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" FontSize="17"/>
+                <Button x:Name="AddFileButton" Grid.Column="0" Grid.Row="0" BorderBrush="LightBlue" Content="{StaticResource Add File}" Margin="60,5,60,2" Click="AddFileButton_Click">
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock>Add a file</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+                <Button x:Name="UpdateFileButton" Grid.Column="1" Grid.Row="0" BorderBrush="LightBlue" Content="{StaticResource Update File}" Margin="60,5,60,2" Click="UpdateFileButton_Click">
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock>Extend a file</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+                <Button x:Name="DeleteFileButton" Grid.Column="2" Grid.Row="0" BorderBrush="LightBlue" Content="{StaticResource Delete File}" Margin="60,5,60,2" Click="DeleteFileButton_Click">
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock>Delete a file</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+                <Button x:Name="InformationButton" Grid.Column="3" Grid.Row="0" BorderBrush="LightBlue" Content="{StaticResource Disk Information}" Margin="60,5,60,2" Click="InformationButton_Click">
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock>Information on the disk</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+            </Grid>
+            <!-- *********************** Record option + Button + label, not implemented ***************************-->
+            <Grid Grid.Row="1" x:Name="RecordMenu" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Add" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="0" Grid.Row="1" FontSize="17"/>
+                <Label Content="Update" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="17"/>
+                <Label Content="Delete" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="1" FontSize="17"/>
+                <Button x:Name="AddRecordButton" Grid.Column="0" Grid.Row="0" BorderBrush="LightBlue" Content="{StaticResource Add Record}" Margin="60,5,60,2" Click="AddRecordButton_Click">
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock>Add a file</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+                <Button x:Name="UpdateRecordButton" Grid.Column="1" Grid.Row="0" BorderBrush="LightBlue" Content="{StaticResource Update Record}" Margin="60,5,60,2" Click="UpdateRecordButton_Click">
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock>Extend a file</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+                <Button x:Name="DeleteRecordButton" Grid.Column="2" Grid.Row="0" BorderBrush="LightBlue" Content="{StaticResource Delete Record}" Margin="60,5,60,2" Click="DeleteRecordButton_Click">
+                    <Button.ToolTip>
+                        <StackPanel>
+                            <TextBlock>Delete a file</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+            </Grid>
+            <!-- *********************** DataGrid FileList, Print all file present: name + date + owner + size, fully implemented-->
+            <DataGrid x:Name="FileList" Grid.Row="2" Margin="20" Background="AliceBlue" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" Visibility="Hidden">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="File Name" Width="1*" Binding="{Binding Path=name}"/>
+                    <DataGridTextColumn Header="File Owner" Width="1*" Binding="{Binding Path=owner}"/>
+                    <DataGridTextColumn Header="Creation Date" Width="1*" Binding="{Binding Path=date}"/>
+                    <DataGridTextColumn Header="File Size" Width="1*" Binding="{Binding Path=size}"/>
+                    <DataGridTextColumn Header="Type" Width="1*" Binding="{Binding Path=type}"/>
+                </DataGrid.Columns>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontSize" Value="20"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+            </DataGrid>
+            <!-- *********************** DataGrid CourseList + RecordList, Print all the record in the file ********************** -->
+                <DataGrid x:Name="RecordList" Grid.Row="2" Margin="20" Background="AliceBlue" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" Visibility="Hidden">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Width="1*" Binding="{Binding Path=Id}"/>
+                        <DataGridTextColumn Header="Name" Width="1*" Binding="{Binding Path=Name}"/>
+                        <DataGridTextColumn Header="Age" Width="1*" Binding="{Binding Path=Year}"/>
+                        <DataGridTextColumn Header="Average" Width="1*" Binding="{Binding Path=Average}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontSize" Value="20"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                </DataGrid>
+                <DataGrid x:Name="CourseList" Grid.Row="2" Margin="20" Background="AliceBlue" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" Visibility="Hidden">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Course ID" Width="1*" Binding="{Binding Path=Id}"/>
+                        <DataGridTextColumn Header="Course Name" Width="1*" Binding="{Binding Path=Name}"/>
+                        <DataGridTextColumn Header="Credit" Width="1*" Binding="{Binding Path=Credit}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontSize" Value="20"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                </DataGrid>
+            <!-- *********************** Extend File Section, Window, full implemented ***************************-->
+            <Grid x:Name="Extend" Grid.Row="2" Margin="165,35" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="Infos" Content="Please fill the followind field" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" FontSize="25" FontStyle="Italic" Background="LightGray"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="File size:" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="23"/>
+                    <TextBox x:Name="FileSizeTextBox" Grid.Column="1" Margin="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="cancel" Content="Cancel" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Height="35" Width="90" FontSize="16" Click="cancel_Click"/>
+                    <Button x:Name="Extended" Content="Extend" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" FontSize="16" Width="90" Height="35" Click="Extended_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=FileSizeTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </Grid>
+            <!-- *********************** Add File Section, Window, full implemented *****************-->
+            <Grid Grid.Row="2" x:Name="AddFileSection" Margin="165,35" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="AddInfo" Content="Please fill the followind field" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" FontSize="25" FontStyle="Italic" Background="LightGray"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="File type: " Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
+                    <ComboBox x:Name="FileType" Grid.Column="1" Margin="14" ItemsSource="{Binding keyType}"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="File Name: " Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
+                    <TextBox x:Name="AddFileNameTextBox" Grid.Column="1" Margin="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="File Owner: " Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"/>
+                    <TextBox x:Name="AddFileOwnerTextBox" Grid.Column="1" Margin="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13"/>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="File Size:" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+                    <TextBox x:Name="AddFileSizeTextBox" Grid.Column="1" Margin="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13"/>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="Addcancel" Content="Cancel" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Height="35" Width="90" FontSize="16" Click="Addcancel_Click"/>
+                    <Button x:Name="AddFile" Content="Add" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" FontSize="16" Width="90" Height="35" Click="AddFile_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=AddFileNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=AddFileOwnerTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=AddFileSizeTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </Grid>
+            <!-- *********************** Add Student/Course Record Section, Window, not implemented ***********-->
+            <Grid Grid.Row="2" x:Name="AddRecordOrCourse" Margin="165,20" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Please fill the followind field" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" FontSize="25" FontStyle="Italic" Background="LightGray"/>
+                
+                <!-- ******************* Student Record, Window Ready need to code behing ********************** -->
+                <Grid Grid.Row="1" x:Name="StudentGridOption" Visibility="Hidden">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Student's Name: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                    <Label Content="Student's Age: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="1" Grid.Column="0"/>
+                    <Label Content="Student's Average: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="2" Grid.Column="0"/>
+                    <TextBox x:Name="StudentNameTextBox" Grid.Row="0"  Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                    <TextBox x:Name="StudentAgeNameTextBox" Grid.Row="1" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                    <TextBox x:Name="StudentAverageTextBox" Grid.Row="2" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                    <Button x:Name="CancelAddStudent" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" Content="Cancel" Margin="110,0,135,15" Width="75" Height="30" Click="CancelAddStudent_Click"/>
+                    <Button x:Name="AddRecordStudent" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="Add" Margin="110,0,135,15" Width="75" Height="30" Click="AddRecordStudent_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=StudentNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=StudentAgeNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=StudentAverageTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="1" x:Name="UpdateStudentGrid" Visibility="Hidden">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Student's Name: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                    <Label Content="Student's Age: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="1" Grid.Column="0"/>
+                    <Label Content="Student's Average: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="2" Grid.Column="0"/>
+                    <TextBox x:Name="StudentNamTextBox" Grid.Row="0"  Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+                    <TextBox x:Name="StudentAgeNamTextBox" Grid.Row="1" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+                    <TextBox x:Name="StudentAveragTextBox" Grid.Row="2" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+                    <Button x:Name="CancelUpdateStudent" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" Content="Cancel" Margin="110,0,135,15" Width="75" Height="30" Click="CancelUpdateStudent_Click"/>
+                    <Button x:Name="UpdateRecordStudent" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="Update" Margin="110,0,135,15" Width="75" Height="30" Click="UpdateRecordStudent_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=StudentNamTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=StudentAgeNamTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=StudentAveragTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+                <!-- ***********************  Course Record Section, Window *************************-->
+                <Grid Grid.Row="1" x:Name="CourseGridOption" Visibility="Hidden">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Course Name: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                    <Label Content="Course ID: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="1" Grid.Column="0"/>
+                    <Label Content="Course Credit: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="2" Grid.Column="0"/>
+                    <TextBox x:Name="CourseNameTextBox" Grid.Row="0"  Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                    <TextBox x:Name="CourseIDTextBox" Grid.Row="1" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                    <TextBox x:Name="CourseCreditTextBox" Grid.Row="2" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                    <Button x:Name="CancelAddCourse" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" Content="Cancel" Margin="110,0,135,15" Width="75" Height="30"/>
+                    <Button x:Name="AddRecordCourse" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="Add" Margin="110,0,135,15" Width="75" Height="30" Click="AddRecordCourse_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=CourseNameTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=CourseIDTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=CourseCreditTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="1" x:Name="UpdateCourseOption" Visibility="Hidden">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Course Name: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="0" Grid.Column="0"/>
+                    <Label Content="Course ID: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="1" Grid.Column="0"/>
+                    <Label Content="Course Credit: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Grid.Row="2" Grid.Column="0"/>
+                    <TextBox x:Name="CourseNamTextBox" Grid.Row="0"  Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17"/>
+                    <TextBox x:Name="CourseIdTextBox" Grid.Row="1" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17"/>
+                    <TextBox x:Name="CourseCrediTextBox" Grid.Row="2" Grid.Column="1" Margin="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="17"/>
+                    <Button x:Name="CancelCourse" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" Content="Cancel" Margin="110,0,135,15" Width="75" Height="30" Click="CancelUpdateStudent_Click"/>
+                    <Button x:Name="UpdateCourse" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="Add" Margin="110,0,135,15" Width="75" Height="30" Click="UpdateRecordStudent_Click">
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=CourseNamTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=CourseIdTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=CourseCrediTextBox, Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </Grid>
+            <!-- *********************** End of page button, Back or open a specific file, not fully implemented ***************-->
+            <!--¨*********************** Need to add opentype, combobox with the option -->
+            <Grid x:Name="LastButton" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="BackButton" Content="Back" Grid.Column="0" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="15,10,0,12" Width="100" Height="25" Click="BackButton_Click"/>
+                <Button x:Name="NextButton" Content="Open" Grid.Column="1" BorderBrush="Black" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,10,15,12" Width="100" Height="25" Click="NextButton_Click"/>
+            </Grid>
+            <!-- *********************** Opentype Page, needed to open FCB ***************************-->
+            <Grid Grid.Row="2" x:Name="OpenFile" Margin="165, 35"  Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Please choose an OpenType" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" FontSize="25" FontStyle="Italic" Background="LightGray"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="OpenType available: " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="0" FontSize="19"/>
+                    <ComboBox x:Name="OpenTypeCombobox"  VerticalAlignment="Center" Margin="10" Grid.Column="1" SelectedItem="{Binding OpenType}"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="Opencancel" Content="Cancel" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Height="35" Width="90" FontSize="16" Click="Opencancel_Click"/>
+                    <Button x:Name="OpenFileButton" Content="Open" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" FontSize="16" Width="90" Height="35" Click="OpenFileButton_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

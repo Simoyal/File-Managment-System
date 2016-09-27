@@ -1,0 +1,61 @@
+﻿La génération a démarré 23/05/2016 20:08:12.
+     1>Projet "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS_DLL\FMS_DLL.vcxproj" sur le nœud 3 (Rebuild cible(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\FMS5776_2397_7707 /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"..\x64\Debug\\" /Fd"..\x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp
+         Source.cpp
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(52): warning C4297: 'createdisk' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(52): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(64): warning C4297: 'mountdisk' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(64): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(76): warning C4297: 'unmountdisk' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(76): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(88): warning C4297: 'recreatedisk' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(88): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(102): warning C4297: 'format' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(102): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(114): warning C4297: 'howmuchempty' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(114): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(132): warning C4297: 'createfile' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(132): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(145): warning C4297: 'delfile' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(145): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(157): warning C4297: 'extendfile' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(157): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(172): warning C4297: 'openfile' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(172): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(187): warning C4297: 'closefile' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(187): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(199): warning C4297: 'readRec' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(199): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(211): warning C4297: 'writeRec' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(211): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(223): warning C4297: 'seekRec' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(223): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(236): warning C4297: 'updateRecCancel' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(236): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(248): warning C4297: 'deleteRec' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(248): note: Fonction extern "C" et /EHc spécifié
+     1>..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(260): warning C4297: 'updateRec' : la fonction lève une exception alors qu'elle est présumée ne pas le faire
+         ..\..\..\..\..\Downloads\SourceCode\cpp\Source.cpp(260): note: Fonction extern "C" et /EHc spécifié
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"..\x64\Debug\FMS_DLL.res" FMS_DLL.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"..\x64\Debug\FMS_DLL.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"..\x64\Debug\FMS_DLL.pdb" /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\x64\Debug\FMS_DLL.lib" /MACHINE:X64 /DLL ..\x64\Debug\FMS_DLL.res
+         ..\x64\Debug\Source.obj
+         C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\x64\Release\FMS5776_2397_7707.lib
+            Création de la bibliothèque ..\x64\Debug\FMS_DLL.lib et de l'objet ..\x64\Debug\FMS_DLL.exp
+         Génération de code en cours
+         All 336 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         Fin de la génération du code
+         FMS_DLL.vcxproj -> C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS_DLL\..\x64\Debug\FMS_DLL.dll
+       PostBuildEvent:
+         copy "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS_DLL\..\x64\Debug\FMS_DLL.dll" "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS_adapter\bin\Debug"  
+         :VCEnd
+                 1 fichier(s) copié(s).
+     1>Génération du projet "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS_DLL\FMS_DLL.vcxproj" terminée (Rebuild cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:06.06

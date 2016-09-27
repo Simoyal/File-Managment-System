@@ -1,0 +1,46 @@
+﻿La génération a démarré 24/05/2016 17:18:06.
+     1>Projet "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\FMS5776_2397_7707.pdb" /Gd /TP /errorReport:prompt DAT.cpp DirEntry.cpp Disk.cpp FCB.cpp FileHeader.cpp Help.cpp Main.cpp RootDir.cpp Sector.cpp SectorDir.cpp TestLevel_1.cpp TestLevel_3.cpp VolumeHeader.cpp
+         DAT.cpp
+         DirEntry.cpp
+         Disk.cpp
+     1>Disk.cpp(368): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+     1>Disk.cpp(483): warning C4018: '>=' : incompatibilité signed/unsigned
+         FCB.cpp
+     1>FCB.cpp(167): warning C4018: '>' : incompatibilité signed/unsigned
+     1>FCB.cpp(174): warning C4018: '>' : incompatibilité signed/unsigned
+     1>FCB.cpp(179): warning C4018: '>' : incompatibilité signed/unsigned
+     1>FCB.cpp(252): warning C4244: 'initialisation' : conversion de 'double' en 'unsigned int', perte possible de données
+     1>FCB.cpp(254): warning C4018: '<' : incompatibilité signed/unsigned
+         FileHeader.cpp
+         Help.cpp
+         Main.cpp
+     1>Main.cpp(211): warning C4018: '>' : incompatibilité signed/unsigned
+     1>Main.cpp(223): warning C4018: '>' : incompatibilité signed/unsigned
+         RootDir.cpp
+         Sector.cpp
+         SectorDir.cpp
+         TestLevel_1.cpp
+         TestLevel_3.cpp
+         VolumeHeader.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\Lib.exe /OUT:"C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\x64\Release\FMS5776_2397_7707.lib" /NOLOGO /MACHINE:X64 /LTCG x64\Release\DAT.obj
+         x64\Release\DirEntry.obj
+         x64\Release\Disk.obj
+         x64\Release\FCB.obj
+         x64\Release\FileHeader.obj
+         x64\Release\Help.obj
+         x64\Release\Main.obj
+         x64\Release\RootDir.obj
+         x64\Release\Sector.obj
+         x64\Release\SectorDir.obj
+         x64\Release\TestLevel_1.obj
+         x64\Release\TestLevel_3.obj
+         x64\Release\VolumeHeader.obj
+         FMS5776_2397_7707.vcxproj -> C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\x64\Release\FMS5776_2397_7707.lib
+     1>Génération du projet "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:10.63

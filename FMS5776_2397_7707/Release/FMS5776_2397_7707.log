@@ -1,0 +1,51 @@
+﻿La génération a démarré 19/06/2016 02:30:12.
+     1>Projet "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707.vcxproj" sur le nœud 2 (Rebuild cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\FMS5776_2397_7707.pdb" /Gd /TP /analyze- /errorReport:prompt DAT.cpp DirEntry.cpp Disk.cpp FCB.cpp FileHeader.cpp Help.cpp Main.cpp RootDir.cpp Sector.cpp SectorDir.cpp TestLevel_1.cpp TestLevel_3.cpp VolumeHeader.cpp
+         DAT.cpp
+         DirEntry.cpp
+         Disk.cpp
+     1>Disk.cpp(441): warning C4018: '>=' : incompatibilité signed/unsigned
+     1>Disk.cpp(443): warning C4018: '>=' : incompatibilité signed/unsigned
+     1>Disk.cpp(522): warning C4018: '>=' : incompatibilité signed/unsigned
+     1>Disk.cpp(525): warning C4018: '<' : incompatibilité signed/unsigned
+     1>Disk.cpp(537): warning C4018: '<' : incompatibilité signed/unsigned
+     1>Disk.cpp(1087): warning C4018: '<' : incompatibilité signed/unsigned
+         FCB.cpp
+     1>FCB.cpp(147): warning C4018: '>' : incompatibilité signed/unsigned
+     1>FCB.cpp(155): warning C4018: '>' : incompatibilité signed/unsigned
+     1>FCB.cpp(160): warning C4018: '>' : incompatibilité signed/unsigned
+     1>FCB.cpp(232): warning C4244: 'initialisation' : conversion de 'double' en 'unsigned int', perte possible de données
+     1>FCB.cpp(234): warning C4018: '<' : incompatibilité signed/unsigned
+         FileHeader.cpp
+         Help.cpp
+         Main.cpp
+     1>Main.cpp(218): warning C4018: '>' : incompatibilité signed/unsigned
+     1>Main.cpp(239): warning C4018: '<' : incompatibilité signed/unsigned
+     1>Main.cpp(47): warning C4101: 'tmp' : variable locale non référencée
+         RootDir.cpp
+         Sector.cpp
+         SectorDir.cpp
+         TestLevel_1.cpp
+         TestLevel_3.cpp
+         VolumeHeader.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\Release\FMS5776_2397_7707.lib" /NOLOGO /LTCG Release\DAT.obj
+         Release\DirEntry.obj
+         Release\Disk.obj
+         Release\FCB.obj
+         Release\FileHeader.obj
+         Release\Help.obj
+         Release\Main.obj
+         Release\RootDir.obj
+         Release\Sector.obj
+         Release\SectorDir.obj
+         Release\TestLevel_1.obj
+         Release\TestLevel_3.obj
+         Release\VolumeHeader.obj
+         FMS5776_2397_7707.vcxproj -> C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\Release\FMS5776_2397_7707.lib
+     1>Génération du projet "C:\Users\Simon\Desktop\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707.vcxproj" terminée (Rebuild cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:04.90

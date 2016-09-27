@@ -1,0 +1,58 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FMS_GUI"
+             xmlns:FMS_adapter="clr-namespace:FMS_adapter;assembly=FMS_adapter" x:Class="FMS_GUI.CreateDisk"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="650" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Title" Content="Create a new disk" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" FontSize="32" FontStyle="Italic" Background="Gray"/>
+        <Label x:Name="Info" Content="Please fill the field to create a disk" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="27" Grid.Row="1"/>
+        <Grid x:Name="grid1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Disk Name:" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25"/>
+            <TextBox x:Name="diskNameTextBox" Grid.Column="1" Margin="25" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="25"/>
+        </Grid>
+        <Grid x:Name="grid2" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Disk Owner:" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25"/>
+            <TextBox x:Name="diskOwnerTextBox" Grid.Column="1" Margin="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BackButton" Content="Back" Grid.Column="0" BorderBrush="Black" Margin="20,35,0,20" HorizontalAlignment="Left" Width="135" Click="BackButton_Click"/>
+            <Button x:Name="NextButton" Content="Next" Grid.Column="1" BorderBrush="Black" Margin="0,35,20,20" HorizontalAlignment="Right" Width="135" Click="NextButton_Click">
+                <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=diskNameTextBox, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=diskOwnerTextBox, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

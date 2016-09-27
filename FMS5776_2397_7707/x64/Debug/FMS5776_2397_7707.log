@@ -1,0 +1,47 @@
+﻿Build started 23/05/2016 16:06:57.
+     1>Project "E:\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707.vcxproj" on node 4 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt DAT.cpp DirEntry.cpp Disk.cpp FCB.cpp FileHeader.cpp Help.cpp Main.cpp RootDir.cpp Sector.cpp SectorDir.cpp TestLevel_1.cpp TestLevel_3.cpp VolumeHeader.cpp
+         VolumeHeader.cpp
+         TestLevel_3.cpp
+         TestLevel_1.cpp
+         SectorDir.cpp
+         Sector.cpp
+         RootDir.cpp
+         Main.cpp
+     1>Main.cpp(211): warning C4018: '>' : signed/unsigned mismatch
+     1>Main.cpp(223): warning C4018: '>' : signed/unsigned mismatch
+         Help.cpp
+         FileHeader.cpp
+         FCB.cpp
+     1>FCB.cpp(163): warning C4018: '>' : signed/unsigned mismatch
+     1>FCB.cpp(170): warning C4018: '>' : signed/unsigned mismatch
+     1>FCB.cpp(175): warning C4018: '>' : signed/unsigned mismatch
+     1>FCB.cpp(248): warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>FCB.cpp(250): warning C4018: '<' : signed/unsigned mismatch
+         Disk.cpp
+     1>Disk.cpp(368): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>Disk.cpp(483): warning C4018: '>=' : signed/unsigned mismatch
+         DirEntry.cpp
+         DAT.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"E:\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\x64\Debug\FMS5776_2397_7707.lib" /NOLOGO /MACHINE:X64 x64\Debug\DAT.obj
+         x64\Debug\DirEntry.obj
+         x64\Debug\Disk.obj
+         x64\Debug\FCB.obj
+         x64\Debug\FileHeader.obj
+         x64\Debug\Help.obj
+         x64\Debug\Main.obj
+         x64\Debug\RootDir.obj
+         x64\Debug\Sector.obj
+         x64\Debug\SectorDir.obj
+         x64\Debug\TestLevel_1.obj
+         x64\Debug\TestLevel_3.obj
+         x64\Debug\VolumeHeader.obj
+         FMS5776_2397_7707.vcxproj -> E:\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\x64\Debug\FMS5776_2397_7707.lib
+     1>Done Building Project "E:\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707\FMS5776_2397_7707.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.23

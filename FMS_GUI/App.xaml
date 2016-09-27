@@ -1,0 +1,22 @@
+﻿<Application x:Class="FMS_GUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FMS_GUI"
+             StartupUri="File System Managment.xaml">
+    <Application.Resources>
+        <Image x:Key="Create" Source="Images/MountDisk.ico"/>
+        <Image x:Key="Mount" Source="Images/Mount.png"/>
+        <Image x:Key="Unmount" Source="Images/Unmount.png"/>
+        <Image x:Key="Open" Source="Images/open.png"/>
+        <Image x:Key="Show" Source="Images/list.png"/>
+        <Image x:Key="Add File" Source="Images/Add.png"/>
+        <Image x:Key="Update File" Source="Images/Update folder.png"/>
+        <Image x:Key="Delete File" Source="Images/Delete file.png"/>
+        <Image x:Key="Disk Information" Source="Images/Information.png"/>
+        <Image x:Key="Add Record" Source="Images/Add Record.png"/>
+        <Image x:Key="Delete Record" Source="Images/Delete Record.png"/>
+        <Image x:Key="Update Record" Source="Images/Update record.png"/>
+        <Image x:Key="Record Information" Source="Images/File info.png"/>
+        <Image x:Key="Print Record" Source="Images/printer.png"/>
+    </Application.Resources>
+</Application>

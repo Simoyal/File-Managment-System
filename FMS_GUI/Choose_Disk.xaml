@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="FMS_GUI.Choose_Disk"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FMS_GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800" Background="White">
+    <Grid>
+        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Section" Content="Open a disk" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="GreenYellow" FontSize="30" FontStyle="Normal" Grid.Row="0"/>
+        <Label x:Name="Info" Content="Please select a disk" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="28" Grid.Row="1" FontStyle="Italic"/>
+        <DataGrid x:Name="Disklist" Grid.Row="2" Margin="20" Background="AliceBlue" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Disk Name" Width="1*" Binding="{Binding Path=name}"/>
+                    <DataGridTextColumn Header="Creation Date" Width="1*" Binding="{Binding Path=date}"/>
+                </DataGrid.Columns>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="FontSize" Value="25"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+        </DataGrid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BackButton" Content="Back" Grid.Column="0" BorderBrush="Black" Margin="20,35,0,20" HorizontalAlignment="Left" Width="135" Click="BackButton_Click"/>
+            <Button x:Name="NextButton" Content="Next" Grid.Column="1" BorderBrush="Black" Margin="0,35,20,20" HorizontalAlignment="Right" Width="135" Click="NextButton_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>
